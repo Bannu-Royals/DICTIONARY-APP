@@ -28,7 +28,7 @@ function displayDefinition(data) {
     }
     const wordData = data[0];
     const word = wordData.word;
-    const phonetic = wordData.phonetic ? `<p class="italic">${wordData.phonetic}</p>` : '';
+    const phonetic = wordData.phonetic ? `<p class="italic text-fuchsia-800">${wordData.phonetic}</p>` : '';
     const meanings = wordData.meanings.map(meaning => {
         const partOfSpeech = `<p class="font-semibold">${meaning.partOfSpeech}</p>`;
         const definitions = meaning.definitions.map(def => `<li>${def.definition}</li>`).join('');
@@ -36,8 +36,8 @@ function displayDefinition(data) {
     }).join('');
 
     document.getElementById('result').innerHTML = `
-        <h2 class="text-xl text-[#EEEEEE] font-bold">${word}</h2>
+        <h2 class="text-xl text-black font-bold">${word}</h2>
         ${phonetic}
-        <div class="mt-2 text-[#EEEEEE]">${meanings}</div>
+        <div class="mt-2 text-black">${meanings}</div>
     `;
 }
